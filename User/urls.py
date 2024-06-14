@@ -7,10 +7,22 @@ from .import views
 
 # router.register('users',views.UserRegistrationViewset, basename= 'registration')
 
+router = DefaultRouter()
+# router.register("list", UserViewset, basename="all-users")
+# router.register("basic-info", UserBasicEditViewset, basename="user-basic-info")
+router.register("register", views.RegistrationView, basename="register-user")
 urlpatterns = [
-    
-    path('register/', views.RegistrationView.as_view(), name='register'),
-    path('login/', views.LoginView.as_view(), name='login'),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
-    path('activate/<uidb64>/<token>', views.activate,name='activate' )
+    path("", include(router.urls)),
+    path('activate/<uidb64>/<token>', views.activate,name='activate' ),
+    path("login/", views.LoginView.as_view(), name="login"),
+    path("logout/", views.LogoutView.as_view(), name="logout"),
+    # path("change-password/", UserChangePassword.as_view(), name="change-password"),
 ]
+
+# urlpatterns = [
+    
+#     path('register/', views.RegistrationView.as_view(), name='register'),
+#     path('login/', views.LoginView.as_view(), name='login'),
+#     path('logout/', views.LogoutView.as_view(), name='logout'),
+#    
+# ]

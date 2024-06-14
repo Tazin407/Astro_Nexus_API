@@ -4,10 +4,10 @@ from .import views
 from User.views import All_Users
 
 router = DefaultRouter()
-router.register(r'All_Users',All_Users)
-router.register(r'Articles',views.ArticleView)
-router.register(r'Mission',views.MissionView)
-router.register(r'Likes',views.LikeView)
+router.register('All_Users',All_Users)
+router.register('Articles',views.ArticleView)
+router.register('Mission',views.MissionView)
+router.register('Likes',views.LikeView)
 
 urlpatterns = [
     path('', include(router.urls)),

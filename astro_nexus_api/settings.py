@@ -65,6 +65,9 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
         
     ],
+     'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
 }
 
 
@@ -121,12 +124,12 @@ DATABASES = {
 #    }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(
-        'postgres://astro_nexus_user:CjokcsDLHrOzs3JkGTlO8VkWswnh00mU@dpg-cpjl9i021fec739vtvi0-a.oregon-postgres.render.com/astro_nexus',
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         'postgres://astro_nexus_user:CjokcsDLHrOzs3JkGTlO8VkWswnh00mU@dpg-cpjl9i021fec739vtvi0-a.oregon-postgres.render.com/astro_nexus',
         
-    )
-}
+#     )
+# }
 
 
 # Password validation

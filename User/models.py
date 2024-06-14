@@ -27,11 +27,17 @@ class CustomUserManager(BaseUserManager):
     
 class CustomUser(AbstractUser):
     username= None
+    USERNAME_FIELD= 'email' 
+    REQUIRED_FIELDS= []
+    
+    
     email= models.EmailField(_('Email Address'),max_length=254, unique= True)
     password= models.CharField(max_length=150)
     email_is_verified= models.BooleanField(default= False)
     first_name= models.CharField(max_length=150)
     last_name= models.CharField(max_length=150)
+    username= models.CharField(max_length=150, unique=True)
+    
     bio= models.TextField(blank= True, null=True)
     
     USERNAME_FIELD= 'email' 
