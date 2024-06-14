@@ -5,12 +5,12 @@ class ArticleSerializer(serializers.ModelSerializer):
    
     class Meta:
         model= models.Article
-        fields= ['title', 'body', 'image', 'author', 'approved']
+        fields= '__all__'
         
 class MissionsSerializer(serializers.ModelSerializer):
     class Meta:
         model= models.Missions
-        fields= ['title', 'body', 'image']
+        fields= '__all__'
         
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
