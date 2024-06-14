@@ -5,7 +5,7 @@ from User.models import CustomUser
 class Article(models.Model):
     title= models.CharField(max_length=100)
     body= models.TextField()
-    image= models.ImageField(upload_to='./media', blank=True, null=True)
+    image= models.URLField(blank=True, null=True)
     author= models.ForeignKey(CustomUser, related_name='articles', on_delete=models.CASCADE)
     date= models.DateField(auto_now_add=True)
     no_of_likes= models.IntegerField(default=0)
@@ -17,7 +17,7 @@ class Article(models.Model):
 class Missions(models.Model):
     title= models.CharField(max_length=100)
     body= models.TextField()
-    image= models.ImageField(upload_to='./media', blank=True, null=True)
+    image= models.URLField(blank=True, null=True)
     date= models.DateField(auto_now_add=True)
     
     def __str__(self) -> str:
