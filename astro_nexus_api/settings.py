@@ -106,12 +106,12 @@ WSGI_APPLICATION = 'astro_nexus_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # DATABASES = {
 #    'default': {
@@ -124,12 +124,12 @@ DATABASES = {
 #    }
 # }
 
-# DATABASES = {
-#     'default': dj_database_url.parse(
-#         'postgres://astro_nexus_user:CjokcsDLHrOzs3JkGTlO8VkWswnh00mU@dpg-cpjl9i021fec739vtvi0-a.oregon-postgres.render.com/astro_nexus',
+DATABASES = {
+    'default': dj_database_url.parse(
+        'postgresql://postgres:vetNJpCIaDGhqayoGAvtXXsbVwmjUzif@roundhouse.proxy.rlwy.net:23802/railway',
         
-#     )
-# }
+    )
+}
 
 
 # Password validation
