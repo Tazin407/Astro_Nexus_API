@@ -72,26 +72,27 @@ class LikeView(ModelViewSet):
             
         return Response(serializer.errors)
         
-    
     def get_queryset(self):
-        queryset= super().get_queryset()
-        user_id= self.request.query_params.get("user_id")
-        article_id= self.request.query_params.get("article_id")
-        
+        queryset = super().get_queryset()
+        user_id = self.request.query_params.get("user_id")
+        article_id = self.request.query_params.get("article_id")
+    
         if user_id:
             try:
-                user= User.objects.get(id=id)
-                queryset= queryset.filter(user=user.id)
-            
+                user = User.objects.get(id=user_id)   
+                queryset = queryset.filter(user=user)
             except User.DoesNotExist:
-                return None
-            
+                return queryset.none()  
+    
         if article_id:
-            article= models.Article.objects.get(id=article_id)
-            queryset= queryset.filter(article= article.id)
-            
-            
+            try:
+                article = models.Article.objects.get(id=article_id)  
+                queryset = queryset.filter(article=article)
+            except models.Article.DoesNotExist:
+                return queryset.none()  
+    
         return queryset
+
     
     
   
