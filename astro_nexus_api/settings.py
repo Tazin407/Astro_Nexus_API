@@ -40,6 +40,14 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:5500',  # Add your origin here
     
 ]
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 
 
