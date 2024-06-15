@@ -5,7 +5,7 @@ class ArticleSerializer(serializers.ModelSerializer):
    
     class Meta:
         model= models.Article
-        fields= ['title', 'body', 'image', 'author']
+        fields= '__all__'
         
 class MissionsSerializer(serializers.ModelSerializer):
     class Meta:
