@@ -29,7 +29,7 @@ class All_Users(ModelViewSet):
     queryset= User.objects.all()
     serializer_class= serializers.UserSerializer
     
-    def update(self, request, *args, **kwargs):
+    def put(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
