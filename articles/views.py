@@ -45,13 +45,13 @@ class MissionView(ModelViewSet):
     serializer_class= serializers.MissionsSerializer
     queryset= models.Missions.objects.all()
     
+    
 class LikeView(ModelViewSet):
-    serializer_class= serializers.ArticleSerializer
+    serializer_class= serializers.LikeSerializer
     queryset= models.Likes.objects.all()
     
     def create(self, request, *args, **kwargs):
-        # serializer= self.serializer_class(data=request.data)
-        serializer= serializers.LikeSerializer(data=request.data)
+        serializer= self.serializer_class(data=request.data)
         
         
         if serializer.is_valid():
@@ -74,6 +74,12 @@ class LikeView(ModelViewSet):
             
         return Response(serializer.errors)
         
+    
+class LikedListView(ModelViewSet):
+    serializer_class= serializers.ArticleSerializer
+    queryset= models.Article.objects.all()
+    
+  
     def get_queryset(self):
         queryset = super().get_queryset()
         user_id = self.request.query_params.get("user_id")
@@ -88,13 +94,6 @@ class LikeView(ModelViewSet):
                 return queryset
             except User.DoesNotExist:
                 return queryset.none()  
-
-        # if article_id:
-        #     try:
-        #         article = models.Article.objects.get(id=article_id)  
-        #         queryset = queryset.filter(article=article)
-        #     except models.Article.DoesNotExist:
-        #         return queryset.none()  
 
         return queryset
 
