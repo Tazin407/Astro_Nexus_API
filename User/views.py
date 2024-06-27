@@ -10,7 +10,7 @@ from django.http import HttpResponse
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView
 
 #email
 from django.contrib.sites.shortcuts import get_current_site
@@ -29,7 +29,7 @@ class All_Users(ModelViewSet):
     queryset= User.objects.all()
     serializer_class= serializers.UserSerializer
     
-    def put(self, request, *args, **kwargs):
+    def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
@@ -128,8 +128,7 @@ class LoginView(CreateAPIView):
                 return Response({'error': 'Please click on the link sent to your email'})
         else:
             return Response({"error": "Invalid Username or Password"})
-        
-     
+    
     
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]

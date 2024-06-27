@@ -77,22 +77,22 @@ class LikeView(ModelViewSet):
         user_id = self.request.query_params.get("user_id")
         liked= self.request.query_params.get("liked")
         article_id = self.request.query_params.get("article_id")
-        
-
-
+    
         if user_id:
             try:
                 user = User.objects.get(id=user_id)   
-                queryset = queryset.filter(user=user)
+                # queryset = queryset.filter(user=user)
+                queryset= models.Article.objects.filter(likes__user=user_id)
+                return queryset
             except User.DoesNotExist:
                 return queryset.none()  
 
-        if article_id:
-            try:
-                article = models.Article.objects.get(id=article_id)  
-                queryset = queryset.filter(article=article)
-            except models.Article.DoesNotExist:
-                return queryset.none()  
+        # if article_id:
+        #     try:
+        #         article = models.Article.objects.get(id=article_id)  
+        #         queryset = queryset.filter(article=article)
+        #     except models.Article.DoesNotExist:
+        #         return queryset.none()  
 
         return queryset
 
