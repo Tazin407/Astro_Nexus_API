@@ -46,7 +46,7 @@ class MissionView(ModelViewSet):
     queryset= models.Missions.objects.all()
     
 class LikeView(ModelViewSet):
-    serializer_class= serializers.LikeSerializer
+    serializer_class= serializers.ArticleSerializer
     queryset= models.Likes.objects.all()
     
     def create(self, request, *args, **kwargs):
