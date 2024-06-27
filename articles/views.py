@@ -50,7 +50,9 @@ class LikeView(ModelViewSet):
     queryset= models.Likes.objects.all()
     
     def create(self, request, *args, **kwargs):
-        serializer= self.serializer_class(data=request.data)
+        # serializer= self.serializer_class(data=request.data)
+        serializer= serializers.LikeSerializer(data=request.data)
+        
         
         if serializer.is_valid():
             user= serializer.validated_data.get("user")
