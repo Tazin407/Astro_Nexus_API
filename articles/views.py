@@ -89,7 +89,6 @@ class LikedListView(ModelViewSet):
         if user_id:
             try:
                 user = User.objects.get(id=user_id)   
-                # queryset = queryset.filter(user=user)
                 queryset= models.Article.objects.filter(likes__user=user_id)
                 return queryset
             except User.DoesNotExist:
