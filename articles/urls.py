@@ -12,5 +12,5 @@ router.register('Liked_list',views.LikedListView)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('', views.ArticleView.as_view({'get': 'list'})),
+    # path('', views.ArticleView.as_view({'get': 'list'})),
 ]
