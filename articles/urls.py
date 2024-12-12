@@ -7,7 +7,7 @@ router = DefaultRouter()
 router.register('All_Users',All_Users)
 router.register('Articles',views.ArticleView)
 router.register('Mission',views.MissionView, basename='mission')
-router.register('Likes',views.LikeViewm, basename='likes')
+router.register('Likes',views.LikeView, basename='likes')
 router.register('Liked_list',views.LikedListView, basename='liked_list')
 
 urlpatterns = [
