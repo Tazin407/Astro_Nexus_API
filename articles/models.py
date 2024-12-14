@@ -5,11 +5,9 @@ from User.models import CustomUser
 class Article(models.Model):
     title= models.CharField(max_length=100)
     body= models.TextField()
-    image= models.URLField(blank=True, null=True)
     author= models.ForeignKey(CustomUser, related_name='articles', on_delete=models.CASCADE)
     date= models.DateField(auto_now_add=True)
     no_of_likes= models.IntegerField(default=0)
-    approved= models.BooleanField(default=False)
     
     def __str__(self) -> str:
         return f"{self.title} by {self.author}"
