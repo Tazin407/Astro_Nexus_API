@@ -20,5 +20,7 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/',include('User.urls') ),
-    path('',include('articles.urls') ),
+    # path('planets/', PlanetView.as_view(), name='planets'),
+    path('', include('missions.urls'), name='missions'),
 ]
+

@@ -7,10 +7,11 @@ from .import views
 
 # router.register('users',views.UserRegistrationViewset, basename= 'registration')
 
-router = DefaultRouter()
 # router.register("list", UserViewset, basename="all-users")
 # router.register("basic-info", UserBasicEditViewset, basename="user-basic-info")
+router = DefaultRouter()
 router.register("register", views.RegistrationView, basename="register-user")
+router.register("users", views.All_Users, basename="all-users")
 urlpatterns = [
     path("", include(router.urls)),
     path('activate/<uidb64>/<token>', views.activate,name='activate' ),
