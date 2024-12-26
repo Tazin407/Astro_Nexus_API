@@ -1,21 +1,23 @@
-planets = {
-    "Venus": {
+planets = [
+     {
+        "Name":"Venus",
         "Description": "Venus is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the third brightest object in the sky after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.",
         "FullViewLink": "https://science.nasa.gov/venus/venus-facts/",
         "Image": "https://plus.unsplash.com/premium_photo-1677186162878-ff5780321d74?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-    "Earth": {
+    {
+        "Name": "Earth",
         "Description": "Earth is the third planet from the Sun and the only astronomical object known to harbor life. Earth is the densest planet in the Solar System and the largest and most massive of the four rocky planets.",
         "FullViewLink": "https://science.nasa.gov/earth/facts/",
         "Image": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-    "Mercury": {
+    {
+        "Name":"Mercury",
         "Description": "The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter.",
         "FullViewLink": "https://science.nasa.gov/mercury/facts/",
         "Image": "https://plus.unsplash.com/premium_photo-1717590126539-a539a861473f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-}
-
+]
 missions= [
     {
         "Title":" Lunar Trailblazer",
