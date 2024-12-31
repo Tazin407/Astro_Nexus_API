@@ -17,18 +17,29 @@ planets = [
         "FullViewLink": "https://science.nasa.gov/mercury/facts/",
         "Image": "https://plus.unsplash.com/premium_photo-1717590126539-a539a861473f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
-]
-missions= [
     {
-        "Title":" Lunar Trailblazer",
-        "Description": "There's water on the Moon, but scientists only have a general idea of where it is and what form it is in. A trailblazing NASA mission will get some answers.When NASA's Lunar Trailblazer begins orbiting the Moon next year, it will help resolve an enduring mystery: Where is the Moon's water? Scientists have seen signs suggesting it exists even where temperatures soar on the lunar surface, and there's good reason to believe it can be found as surface ice in permanently shadowed craters, places that have not seen direct sunlight for billions of years. But, so far, there have been few definitive answers, and a full understanding of the nature of the Moon's water cycle remains stubbornly out of reach.",
-        "FullViewLink": "https://www.nasa.gov/missions/small-satellite-missions/lunar-trailblazer/how-nasas-lunar-trailblazer-could-decipher-the-moons-icy-secrets/",
-        "Image": "https://www.nasa.gov/wp-content/uploads/2024/10/1-lunar-trailblazer-solar-deploy-test-4-8-24-md001.jpg?resize=2000,1334"
+        "Name":"Mars",  
+        "Description": "Mars is a cold desert world. It is half the diameter of Earth and has the same amount of dry land. Like Earth, Mars has seasons, polar ice caps, volcanoes, canyons, and weather, but its atmosphere is too thin for liquid water to exist for long on the surface.",
+        "FullViewLink": "https://science.nasa.gov/mars/facts/",
+        "Image": "https://media.istockphoto.com/id/949235488/photo/3d-rendering-planet-mars-isolated-on-black.jpg?s=1024x1024&w=is&k=20&c=i2XyIJI_11pEcZPP17qVc3b1SvqXFRZL8Yep9q5gKZ0="
     },
     {
-        "Title": "Powerful New US-Indian Satellite Will Track Earth's Changing Surface",
-        "Description": "Data from NISAR will improve our understanding of such phenomena as earthquakes, volcanoes, and landslides, as well as damage to infrastructure.",
-        "FullViewLink": "https://www.nasa.gov/missions/nisar/powerful-new-us-indian-satellite-will-track-earths-changing-surface/",
-        "Image": "https://www.nasa.gov/wp-content/uploads/2024/11/1-redoubt-eruption-usgs.jpg?resize=2000,1330"
+        "Name":"Jupiter",
+        "Description": "Jupiter is the largest planet in our solar system. It is the fifth planet from the Sun. Jupiter is a gas giant, both because it is so large and made up of gas. It is mostly made of hydrogen and helium.",
+        "FullViewLink": "https://science.nasa.gov/jupiter/facts/",
+        "Image": "https://media.istockphoto.com/id/1482783826/photo/artist-view-of-the-jupiter-planet.jpg?s=1024x1024&w=is&k=20&c=STL8Vka7csjEORs0IDA7KRqNUyKbMUc4-FLscLU9KEo="
+        
     },
+    {
+        "Name":"Saturn",        
+        "Description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.",
+        "FullViewLink": "https://science.nasa.gov/saturn/facts/",
+        "Image": "https://media.istockphoto.com/id/1211739859/photo/miranda-uranus-v-orbiting-around-uranus-planet-in-the-outer-space-3d-render.jpg?s=1024x1024&w=is&k=20&c=rUMfBZ5KZhnKi-tC3vG0vzzxgma_jUuXTENVk4OvZrc="
+    },
+    {
+        "Name":"Uranus",
+        "Description": "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have bulk chemical compositions which differ from that of the larger gas giants Jupiter and Saturn.",
+        "FullViewLink": "https://science.nasa.gov/uranus/facts/",
+        "Image": "https://media.istockphoto.com/id/1648039317/photo/uranus-and-milky-way-galaxy-background.jpg?s=1024x1024&w=is&k=20&c=MspbKIK5I8QGnLgI1g8SKyTJnmVJmBGDHthPtimgm8Y="
+    }
 ]

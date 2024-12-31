@@ -12,6 +12,7 @@ from .import static_data
 
 user= get_user_model()
 
+
 class PlanetView(APIView):
     def get(self, request):
         return Response(static_data.planets)
@@ -20,10 +21,12 @@ class MissionView(ModelViewSet):
     serializer_class= serializers.MissionSerializer
     queryset= models.Mission.objects.all()
     
+    
 
 class SaveMissionView(APIView):
     serializer_class= serializers.SaveMissionSerializer
     queryset=models.SaveMission.objects.all()
+    
     
     def get(self, request):
         missions = models.SaveMission.objects.all()
