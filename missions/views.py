@@ -48,5 +48,12 @@ class SaveMissionView(APIView):
         mission.delete()
         mission.save(user=request.user)
         return Response("Mission deleted")
+    
+    def get_queryset(self, request):
+        user= request.query_params.get('user_id')
+        return models.SaveMission.objects.filter(user=user)
+        
+        
+    
 
         
