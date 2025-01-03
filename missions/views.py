@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.generics import GenericAPIView
 from .import serializers
 from .import models
 from .import static_data
@@ -23,12 +24,12 @@ class MissionView(ModelViewSet):
     
     
 
-class SaveMissionView(APIView):
+class SaveMissionView(GenericAPIView):
     serializer_class= serializers.SaveMissionSerializer
     queryset=models.SaveMission.objects.all()
     
     def get(self, request):
-        missions = models.SaveMission.objects.all()
+        missions = self.get_queryset()
         serializer = self.serializer_class(missions, many=True)  # Serialize multiple objects
         return Response(serializer.data)
     
@@ -48,14 +49,9 @@ class SaveMissionView(APIView):
         mission.save(user=request.user)
         return Response("Mission deleted")
     
-    def get_queryset(self, request):
-        queryset= models.SaveMission.objects.all()
-        user= request.query_params.get('user_id')
+    def get_queryset(self):
+        queryset= super().get_queryset()
+        user= self.request.query_params.get('user_id')
         if user:
             queryset= models.SaveMission.objects.filter(user=user)
         return queryset
-        
-        
-    
-
-        
