@@ -27,7 +27,6 @@ class SaveMissionView(APIView):
     serializer_class= serializers.SaveMissionSerializer
     queryset=models.SaveMission.objects.all()
     
-    
     def get(self, request):
         missions = models.SaveMission.objects.all()
         serializer = self.serializer_class(missions, many=True)  # Serialize multiple objects
@@ -50,8 +49,11 @@ class SaveMissionView(APIView):
         return Response("Mission deleted")
     
     def get_queryset(self, request):
+        queryset= models.SaveMission.objects.all()
         user= request.query_params.get('user_id')
-        return models.SaveMission.objects.filter(user=user)
+        if user:
+            queryset= models.SaveMission.objects.filter(user=user)
+        return queryset
         
         
     
